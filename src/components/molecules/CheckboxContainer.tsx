@@ -1,8 +1,8 @@
 import Checkbox from "../atoms/Checkbox";
-import { Service } from "../views/ChooseServicesView/ChooseServicesView";
+import { ServicesChecked } from "../views/ChooseServicesView/ChooseServicesView";
 
 type CheckboxContainerProps = {
-  items: Service[],
+  items: ServicesChecked[],
   handleChange: (key: string) => void
 }
 const CheckboxContainer = ({items, handleChange}: CheckboxContainerProps) => {

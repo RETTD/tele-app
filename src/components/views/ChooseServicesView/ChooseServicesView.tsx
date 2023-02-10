@@ -1,15 +1,15 @@
 import CheckboxContainer from "../../molecules/CheckboxContainer";
 import SelectYear from "../../atoms/SelectYear";
-import { getPrice } from './getPrice'
+import { getPrice } from "./getPrice";
 import React, { useState, useCallback } from "react";
 
-export type Service = {
+export type ServicesChecked = {
   label: string;
   key: string;
   checked: boolean;
 };
 
-const services: Service[] = [
+const services: ServicesChecked[] = [
   {
     label: "Internet",
     key: "internet",
@@ -65,12 +65,12 @@ const ChooseServicesView = () => {
       />
       <SelectYear optionsState={year} setState={setYear} />
       <button onClick={handleClickToGetPrice}>Oblicz cenę</button>
+      {checkboxes.find((el) => el.key === "decoder" && el.checked === true) &&
+        checkboxes.find((el) => el.key === "tv" && el.checked === false) && (
+          <p>Nie możesz zakupić dekodera bez telewizji</p>
+        )}
       {price ? (
-        price === -1 ? (
-          <p>Nie możesz zakupić dekodera bez telewizji.</p>
-        ) : (
-          <p>Cena za ten zestaw wynosi: {price}</p>
-        )
+        <p>Cena za ten zestaw wynosi: {price}</p>
       ) : (
         <p>Wybierz usługi</p>
       )}

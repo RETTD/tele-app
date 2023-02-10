@@ -1,14 +1,14 @@
-import { Service } from "../views/ChooseServicesView/ChooseServicesView";
+import { ServicesChecked } from "../views/ChooseServicesView/ChooseServicesView";
 
 type CheckobxProps = {
-  item: Service
+  item: ServicesChecked
   handleChange: (key: string) => void,
 };
 
 const Checkobx = ({ item, handleChange }: CheckobxProps) => {
 
   return (
-    <div>
+    <div key={item.key}>
       {item.label}
       <input type="checkbox" checked={item.checked} onChange={() => handleChange(item.key)} />
     </div>
