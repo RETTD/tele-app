@@ -65,8 +65,8 @@ const ChooseServicesView = () => {
       />
       <SelectYear optionsState={year} setState={setYear} />
       <button onClick={handleClickToGetPrice}>Oblicz cenę</button>
-      {checkboxes.find((el) => el.key === "decoder" && el.checked === true) &&
-        checkboxes.find((el) => el.key === "tv" && el.checked === false) && (
+      {checkboxes.find(({key, checked}) => key === "decoder" && checked) &&
+        checkboxes.find(({key, checked}) => key === "tv" && !!checked) && (
           <p>Nie możesz zakupić dekodera bez telewizji</p>
         )}
       {price ? (

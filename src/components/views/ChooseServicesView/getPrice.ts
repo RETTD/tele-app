@@ -1,4 +1,5 @@
 import {prices} from './prices.const'
+
 function flattenArray(arrays: string[][]) {
   let result: string[][] = [];
   arrays.forEach(array1 => {
@@ -36,7 +37,7 @@ export function getPrice(checked: string[], year: string) {
   })
   
   const discounts = listOfItems.filter(item => item.includes('discount'))
-  if (discounts) {
+  if (discounts.length > 0) {
     const arrayForCheck = discounts.map((el) => {
       const arr = el.split('-')
       arr.shift()
@@ -55,6 +56,5 @@ export function getPrice(checked: string[], year: string) {
       })
     }
   }
-
   return totalPrice
 }

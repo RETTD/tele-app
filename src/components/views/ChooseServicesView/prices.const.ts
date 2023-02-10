@@ -24,11 +24,10 @@ export const prices: Prices = {
       "phone": 29,
       "decoder": 29,
       "discount-internet-tv": 9,
-      "discount-internet-tv-phone": 14, // przeliczone najbardziej korzystne polaczenie promocji internet-tv-phone
+      "discount-internet-tv-phone": 9, // przeliczone najbardziej korzystne polaczenie promocji internet-tv-phone
       "discount-internet-phone": 14,
       "discount-internet-tv-decoder": 38, // mniej o cene dekodera oraz 9 ze znizki internet tv
       "discount-internet-tv-phone-decoder": 43 // mniej o cene dekodera 29 oraz 14 ze znizki interet tv phone
-  
     },
     "2025": {
       "internet": 59,
@@ -40,6 +39,5 @@ export const prices: Prices = {
       "discount-internet-phone": 24, 
       "discount-internet-tv-decoder": 48, // mniej o cene dekodera oraz 19 ze znizki internet tv
       "discount-internet-tv-phone-decoder": 62 // mniej o cene dekodera 29 oraz 24 ze znizki interet tv phone
-  
     }
   }
